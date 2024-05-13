@@ -1,0 +1,25 @@
+<h1>Welcome to our about page! 👻</h1>
+
+<p>Information about our batch:</p>
+<p>We are cool</p>
+<p>We are funny</p>
+<p>We are smart</p>
+
+<!-- ER: EMbedded Ruby -->
+
+<form action="/about" method="get">
+  <label for="student">Please type a name...</label>
+  <input id="student"
+        type="text"
+        name="user_input"
+        value="<%= @specific_student %>"
+        placeholder="Who are you looking for?">
+  <input type="submit">
+</form>
+
+<p>We are:</p>
+<% @students.each do |student| %>
+  <li><%= student.capitalize %></li>
+<% end %>
+
+<%= link_to 'Dashboard', dashboard_path %>
